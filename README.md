@@ -8,10 +8,12 @@ Just add your array and everything is done... it's a kind of magic! It's sourcer
 
 ## Installation
 
-Add your UITableView in the storyboard and create your custom prototype cell.
+Copy the Sources folder, with the classes and the protocols needed, in your project.
 
 
 ## Usage
+
+Add your UITableView in the storyboard and create your custom prototype cell.
 
 Create your subclass of UITableViewCell for your custom cell. This cell MUST conforms to the protocol **AMConfigurableCell**, so you have to implement the method:
 
