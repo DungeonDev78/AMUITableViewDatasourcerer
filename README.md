@@ -1,7 +1,8 @@
 # AMUITableViewDatasourcerer
 
 Create UITableViews in the blink of an eye!
-Just add your array and everything is done... it's a kind of magic!
+Avoid to write over and over all that bolierplate code for the tableviews. Just write it once... even better, I've done it for you!
+Just add your array and everything is done... it's a kind of magic! It's sourcery!!!
 
 ![Image description](https://github.com/DungeonDev78/AMUITableViewDatasourcerer/blob/master/AMTVDatasourcererExample.jpg?raw=true)
 
@@ -70,6 +71,7 @@ class ViewController: UIViewController {
         dataSource = AMUITableViewDatasourcerer.init(multiSectionItems: CharacterFactory.createMultisectionCharacters(), cellClass: CharacterCell.self)
         tableView.dataSource = dataSource
     }
+    
 }
 ```
 
