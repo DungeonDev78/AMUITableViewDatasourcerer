@@ -8,37 +8,55 @@ Just add your array and everything is done... it's a kind of magic!
 
 ## Installation
 
-Copy the two Swift classes included in the repo in your project.
+Add your UITableView in the storyboard and create your custom prototype cell.
 
 
 ## Usage
 
-Add in your Storyboard a UIView and set its class as UISegmentedControl.
-
-
-Connect your component in your UIViewController using a @IBAction:
-```
-@IBAction func segmentedControlValueChanged(_ sender: AMUISegmentedControl) {
-        print("*** SELECTED INDEX: \(sender.selectedIndex) ***")
-}
-```
-
-Configure your selectors appearance directly on the storyboard using the IBInspectable variables.
-
-
-Choose the main style of the component with the bool **isUnderlined**. If you set the value to false you can also edit the **borderWidth** and **borderColor** values.
-
-Add a list of options in the **commaSeparatedButtonTitles** field and remember to separate them with commas:
+Create your subclass of UITableViewCell for your custom cell. This cell MUST conforms to the protocol **AMConfigurableCell**, so you have to implement the method:
 
 ```
-commaSeparatedButtonTitles = "First, Second, Third"
+func configure(_ item: T, at indexPath: IndexPath)
 ```
 
-To change the font style and the size used:
+Please note that you can use any kind of item for the model of the cell.
+
+Now back to your storyboard and add the reuseIdentifier of the custom cell that MUST be the name of the cell class itself.
+
+In your ViewController class add the datasource variable with the two generic constraints:
+
 ```
-fontName = "Futura-Bold"
-fontSize = 14
+var dataSource: AMUITableViewDatasourcerer<YOUR_ITEM_MODEL, YOUR_CELL_CLASS_>?
 ```
+
+Once you have your array of items use it to create the datasource:
+
+```
+dataSource = AMUITableViewDatasourcerer.init(items: YOUR_ARRAY_OF_ITEMS, cellClass: CharacterCell.self)
+tableView.dataSource = dataSource
+```
+
+If you need to create a multi sections TableView, use an array of **DatasourcererMultisectionItem**. It comes with a special init:
+
+```
+init(headerTitle: String, footerTitle: String? = nil, sectionIndexTitle: String? = nil, items: [T]) 
+```
+
+and of course in your ViewController:
+
+```
+dataSource = AMUITableViewDatasourcerer.init(multiSectionItems: YOUR_ARRAY_OF_MULTISECTIONITEMS, cellClass: CharacterCell.self)
+```
+
+Please note the **items** array of generics. You can avoid to add ** footerTitle** and ** sectionIndexTitle** if toy do not need them.
+
+If you need additional logic for the tableview *canEditRowAt* and *canMoveRowAt*, just use the vars:
+
+```
+var onCanEditRow: ((IndexPath) -> Bool)?
+var onCanMoveRow: ((IndexPath) -> Bool)?
+```
+
 
 ## Author
 
