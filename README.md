@@ -2,7 +2,6 @@
 
 Create UITableViews in the blink of an eye!
 Just add your array and everything is done... it's a kind of magic!
-(...read.me, work in progress...)
 
 ![Image description](https://github.com/DungeonDev78/AMUITableViewDatasourcerer/blob/master/AMTVDatasourcererExample.jpg?raw=true)
 
@@ -26,13 +25,13 @@ Now back to your storyboard and add the reuseIdentifier of the custom cell that 
 In your ViewController class add the datasource variable with the two generic constraints:
 
 ```
-var dataSource: AMUITableViewDatasourcerer<YOUR_ITEM_MODEL, YOUR_CELL_CLASS_>?
+var dataSource: AMUITableViewDatasourcerer<YOUR_ITEM_MODEL, YOUR_CELL_CLASS>?
 ```
 
-Once you have your array of items use it to create the datasource:
+Once you have your array of items, use it to create the datasource:
 
 ```
-dataSource = AMUITableViewDatasourcerer.init(items: YOUR_ARRAY_OF_ITEMS, cellClass: CharacterCell.self)
+dataSource = AMUITableViewDatasourcerer.init(items: YOUR_ARRAY_OF_ITEMS, cellClass: YOUR_CELL_CLASS)
 tableView.dataSource = dataSource
 ```
 
@@ -45,12 +44,12 @@ init(headerTitle: String, footerTitle: String? = nil, sectionIndexTitle: String?
 and of course in your ViewController:
 
 ```
-dataSource = AMUITableViewDatasourcerer.init(multiSectionItems: YOUR_ARRAY_OF_MULTISECTIONITEMS, cellClass: CharacterCell.self)
+dataSource = AMUITableViewDatasourcerer.init(multiSectionItems: YOUR_ARRAY_OF_MULTI_SECTION_ITEMS, cellClass: YOUR_CELL_CLASS)
 ```
 
-Please note the **items** array of generics. You can avoid to add ** footerTitle** and ** sectionIndexTitle** if toy do not need them.
+Please note the **items** array of generics. You can avoid to add **footerTitle** and **sectionIndexTitle** if toy do not need them.
 
-If you need additional logic for the tableview *canEditRowAt* and *canMoveRowAt*, just use the vars:
+If you need additional logic for the tableview **canEditRowAt** and **canMoveRowAt**, just use the vars:
 
 ```
 var onCanEditRow: ((IndexPath) -> Bool)?
