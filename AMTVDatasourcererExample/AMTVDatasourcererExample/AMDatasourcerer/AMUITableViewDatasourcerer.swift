@@ -180,7 +180,7 @@ private extension AMUITableViewDatasourcerer {
 
 
 //MARK: - Class DatasourcererMultisectionItem
-class DatasourcererMultisectionItem<T> {
+public class DatasourcererMultisectionItem<T> {
     //MARK: - Properties
     let headerTitle: String
     let footerTitle: String?
