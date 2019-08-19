@@ -56,6 +56,23 @@ var onCanEditRow: ((IndexPath) -> Bool)?
 var onCanMoveRow: ((IndexPath) -> Bool)?
 ```
 
+Just take a look at the example project. That's a common ViewController implementation... just few lines of code:
+
+```
+class ViewController: UIViewController {
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    var dataSource: AMUITableViewDatasourcerer<CharacterModel, CharacterCell>?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataSource = AMUITableViewDatasourcerer.init(multiSectionItems: CharacterFactory.createMultisectionCharacters(), cellClass: CharacterCell.self)
+        tableView.dataSource = dataSource
+    }
+}
+```
+
 
 ## Author
 
