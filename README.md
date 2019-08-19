@@ -1,8 +1,10 @@
-# AMUISegmentedControl
+# AMUITableViewDatasourcerer
 
-A custom UISegmentedControl in two different flavours made for iOS in Swift 5.0
+Create UITableViews in the blink of an eye!
+Just add your array and everything is done... it's a kind of magic!
+(...read.me, work in progress...)
 
-![Image description](https://github.com/DungeonDev78/AMUISegmentedControl/blob/master/img001.jpg)
+![Image description](https://github.com/DungeonDev78/AMUITableViewDatasourcerer/blob/master/AMTVDatasourcererExample.jpg?raw=true)
 
 ## Installation
 
