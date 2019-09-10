@@ -22,7 +22,7 @@ public class AMUITableViewDatasourcerer<T, U: AMConfigurableCell>: NSObject, UIT
         case unknown
     }
 
-    typealias DatasourcererItem = U.T
+    typealias DatasourcererItem =  U.T
 
     fileprivate var items = [DatasourcererItem]()
     fileprivate var cellClass: U.Type
@@ -195,5 +195,4 @@ public class DatasourcererMultisectionItem<T> {
         self.items = items
     }
 }
-
 

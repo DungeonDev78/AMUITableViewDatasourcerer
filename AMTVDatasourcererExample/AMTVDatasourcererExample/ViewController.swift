@@ -16,8 +16,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = AMUITableViewDatasourcerer.init(items: CharacterFactory.createListOfCharacters(), cellClass: CharacterCell.self)
-//        dataSource = AMUITableViewDatasourcerer.init(multiSectionItems: CharacterFactory.createMultisectionCharacters(), cellClass: CharacterCell.self)
+//        dataSource = AMUITableViewDatasourcerer.init(items: CharacterFactory.createListOfCharacters(), cellClass: CharacterCell.self)
+        dataSource = AMUITableViewDatasourcerer.init(multiSectionItems: CharacterFactory.createMultisectionCharacters(), cellClass: CharacterCell.self)
         tableView.dataSource = dataSource
     }
 

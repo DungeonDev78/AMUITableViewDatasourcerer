@@ -47,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A883EEE4230D5AB100B618DA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A8FC4EE92306F47D00A85338 /* CharacterCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A8FC4EBD2306E9E400A85338 = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +76,7 @@
 			children = (
 				A8FC4EC92306E9E400A85338 /* AppDelegate.swift */,
 				A8FC4ECB2306E9E400A85338 /* ViewController.swift */,
-				A8FC4EE92306F47D00A85338 /* CharacterCell.swift */,
+				A883EEE4230D5AB100B618DA /* Cells */,
 				A8FC4ECD2306E9E400A85338 /* Main.storyboard */,
 				A8FC4EE32306EAAF00A85338 /* Model */,
 				A8FC4EDB2306E9F400A85338 /* AMDatasourcerer */,
